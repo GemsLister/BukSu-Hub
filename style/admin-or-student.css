@@ -1,0 +1,95 @@
+@font-face{
+  font-family: "Nunito";
+  src: url(/Nunito-Font/static/Nunito-Regular.ttf);  
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --white: #f1f1f1;
+    --blue: #08519c;
+    --blue-after: #074583;
+}
+
+
+html body{
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    background-color:var(--white);
+}
+
+form{
+    display: grid;
+    justify-items: center;
+    grid-template-rows: repeat(1, 1fr);
+    place-items: center;
+    background-color: var(--blue);
+    padding: min(50vh, 30px);
+    border-radius: 10px;
+    font-family: "Nunito";
+}
+
+picture img{
+    height: 25vh;
+}
+
+.primary-buttons{
+    grid-row: 1/2;
+    display: flex;
+    width: 100vw;
+    justify-content: space-around;
+}
+
+.btn-group{
+    display: grid;
+    place-self: center;
+}
+
+.primary-buttons .btn{
+    background-color: inherit;
+    border: 1px solid white;
+    color: white;
+    padding: min-max(8px, 1rem);
+    width: min(26vw, 100vw);
+    cursor: pointer;
+}
+
+.primary-buttons .btn:hover{
+    border: 1px solid white;
+    background-color: var(--blue-after);
+}
+
+@media screen and (max-width: 547px) {
+    .primary-buttons{
+        width: 60vw;
+    }
+
+    .primary-buttons .btn-outline-primary{
+        font-size: 0.85em;
+    }
+}
+
+@media screen and (min-width: 548px) and (width < 769px) {
+    .primary-buttons{
+        gap: 2vw;
+        width: 60vw;
+    }
+    
+    picture img{
+        height: 30vh;
+    }
+    
+    .primary-buttons .btn{
+        height: 5vh;
+        width: 20vw;
+    }
+
+    .primary-buttons .btn-outline-primary{
+        font-size: 0.87em;
+    }
+}
